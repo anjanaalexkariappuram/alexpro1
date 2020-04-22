@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<!--<script type="text/javascript" src=""></script>-->
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="img/favicon.png" type="image/png">
+	<title>Hospice Medical</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="vendors/linericon/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+	<link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+	<link rel="stylesheet" href="vendors/animate-css/animate.css">
+	<link rel="stylesheet" href="vendors/jquery-ui/jquery-ui.css">
+	<!-- main css -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/responsive.css">
+</head>
+
+
+
+<body>
+
+
+
+	<!--================Header Menu Area =================-->
+	<header class="header_area">
+		
+		<div class="main_menu">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<a class="navbar-brand logo_h" href="">
+						<img src="newlogo.png" alt="">
+                        
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					 aria-expanded="false" aria-label="Toggle navigation">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+						<div class="row ml-0 w-100">
+							<div class="col-lg-12 pr-0">
+								<ul class="nav navbar-nav center_nav pull-right">
+									<li class="nav-item active">
+										<a class="nav-link" href="index.html">Home</a>
+									</li>
+									<li class="nav-item ">
+										<a class="nav-link" href="login.php">Login</a>
+									</li>
+									
+									<li class="nav-item submenu dropdown">
+										<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Registration</a>
+										<ul class="dropdown-menu">
+											<li class="nav-item">
+												<a class="nav-link" href="nursereg.html">Patient</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="patientreg.html">Doctor</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="docreg.php">Home Nurse</a>
+											</li>
+										</ul>
+									</li>
+									
+									<li class="nav-item">
+										<a class="nav-link" href="index.html">Logout</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--================Header Menu Area =================-->
+
+	<!--================ Home Banner Area =================-->
+	
+	<!--================ End Home Banner Area =================-->
+
+	<!--================ Procedure Category Area =================-->
+    <br><br><br><br> <div class="col-lg-9" style="background-color: #66a3ff; height:1500px; width: 1500px;margin-left: auto;margin-right: auto;border-radius: 25px; margin-top: 90px;margin-bottom: 90px;"> 
+                    <form class="row contact_form" name="myform" onsubmit="return validateform()" action="nursereg.php" method="POST" id="contactForm" novalidate autocomplete="off" enctype="multipart/form-data">
+                        <div class="col-md-6" style="margin-right: auto;margin-left: auto;">
+                            <div class="form-group"><br>
+                            
+                            <h3 class="pb-20 text-center mb-20">Home Nurse Registration Form</h3>
+                                <!--<input type="text" class="form-control" id="name" name="name" onChange="return validateform1()" placeholder="Full Name">-->
+                                <label>First Name</label>
+                            <input type="text" id="name" name="name" class="form-control"  onChange="return validateform1()">
+                                <script>
+				  function validateform1()
+				  {
+var x=document.forms["myform"]["name"].value;
+if(x=="")
+{
+alert("Please Fill name");
+document.getElementById("name").focus();
+return false;
+}
+var x=new RegExp("^[a-zA-z ]*$");
+if(!x.test(document.myform.name.value))
+{
+	alert("Enter name with characters only");
+	myform.name.focus();
+	document.getElementById("name").value="";
+	return false;
+}
+var x=document.forms["myform"]["name"].value;
+if(x.length<2 || x.length>30)
+{
+alert("Please enter name with more than 2 letters and less than 30 letters");
+document.getElementById("name").focus();
+document.getElementById("name").value="";
+return false;
+}
+return true;
+			}
+				  
+				  </script>
+                            </div>
+                            &nbsp&nbsp&nbsp&nbspGender:&nbsp&nbsp&nbsp
+        <input type="radio" name="gender" value="Male" checked>&nbsp&nbsp&nbsp&nbspMale&nbsp&nbsp <input type="radio" name="gender"                                                 value="Female" >&nbsp&nbsp&nbsp&nbspFemale	
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" onChange="return validateform6()" required="">
+                                 <script>
+				function validateform6()
+				{
+					var digits = "0123456789";
+var phoneNumberDelimiters = "()- ";
+var validWorldPhoneChars = phoneNumberDelimiters + "+";
+var minDigitsInIPhoneNumber = 10;
+
+function isInteger(s)
+{   var i;
+    for (i = 0; i < s.length; i++)
+    {   
+        var c = s.charAt(i);
+        if (((c < "0") || (c > "9"))) return false;
+    }
+    
+    return true;
+}
+function trim(s)
+{   var i;
+    var returnString = "";
+    
+    for (i = 0; i < s.length; i++)
+    {   
+        
+        var c = s.charAt(i);
+        if (c != " ") returnString += c;
+    }
+    return returnString;
+}
+function stripCharsInBag(s, bag)
+{   var i;
+    var returnString = "";
+    
+    for (i = 0; i < s.length; i++)
+    {   
+        
+        var c = s.charAt(i);
+        if (bag.indexOf(c) == -1) returnString += c;
+    }
+    return returnString;
+}
+
+function checkInternationalPhone(strPhone){
+var bracket=3
+strPhone=trim(strPhone)
+if(strPhone.indexOf("+")>1) return false
+if(strPhone.indexOf("-")!=-1)bracket=bracket+1
+if(strPhone.indexOf("(")!=-1 && strPhone.indexOf("(")>bracket)return false
+var brchr=strPhone.indexOf("(")
+if(strPhone.indexOf("(")!=-1 && strPhone.charAt(brchr+2)!=")")return false
+if(strPhone.indexOf("(")==-1 && strPhone.indexOf(")")!=-1)return false
+s=stripCharsInBag(strPhone,validWorldPhoneChars);
+return (isInteger(s) && s.length >= minDigitsInIPhoneNumber);
+}
+
+	var Phone=document.myform.mobile
+	
+	if ((Phone.value==null)||(Phone.value=="")){
+		alert("Please Enter your Phone Number")
+		Phone.focus()
+		return false
+	}
+	if (checkInternationalPhone(Phone.value)==false){
+		alert("Please Enter a Valid Phone Number")
+		Phone.value=""
+		Phone.focus()
+		return false
+	}
+	
+var x=new RegExp("^([6-9]{1})([0-9]{9})$");
+if(!x.test(document.myform.mobile.value))
+{
+	alert("Phone number is invalid.Phone number must begin with 9,8,7 or 6");
+	myform.mobile.focus();
+	return false;
+}
+return true;
+				}
+				</script>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="pin" name="pin" placeholder="Pin" onChange="return validateform2()" required="" autocomplete="off"/>
+
+                                <script>
+                                	function validateform2()
+                                	{
+
+                                		if( document.myform.pin.value == "" || isNaN( document.myform.pin.value) || document.myform.pin.value.length != 6)
+   {
+     alert( "Please provide a 6 digit pincode" );
+     document.myform.pin.focus() ;
+     return false;
+   }
+                                	}
+
+                                </script>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="house" name="house" placeholder="House Name" onChange="return validateform3()" required="" autocomplete="off"/>
+                               <script>
+				  function validateform3()
+				  {
+					  var x=document.forms["myform"]["house"].value;
+                      if(x=="")
+                         {
+                        alert("Please Fill House Name");
+                        document.getElementById("house").focus();
+                         return false;
+                         }
+                      return true;
+				  }
+				  </script>
+                                
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="mail" name="mail" placeholder="Email" onChange="return validateform4()" required="">
+                                     <script>
+                                     	function validateform4()
+                                     	{
+
+                                     var emailid = /^([a-z0-9A-Z_\.\-])+\@(([a-zA-Z\-])+\.)+([a-zA-Z]{2,4})+$/;
+                                     var c=document.myform.mail.value;
+                                     if(c==null || c=="")
+	                                    {
+	                                     alert("email can't be empty");
+	                                       return false;
+	                                       }
+                                         if (!emailid.test(document.myform.mail.value)) {
+                                          alert('Please provide a valid email id');
+                                           emailid.focus;
+                                             return false;
+                                              }
+                                     	}
+                                         
+                                     </script>
+
+
+                            </div>
+                            <div class="form-group">
+                                <input type="date" class="form-control" id="dob" name="dob" placeholder="Date of Birth" onChange="return validateform5()">
+
+                                  <script>
+                                  	function validateform5()
+                                  	{
+                                  		var x=document.forms["myform"]["dob"].value;
+                                         if(x=="")
+                                            {
+                                             alert("Please Fill Date of birth");
+                                              document.getElementById("dob").focus();
+                                               return false;
+                                             }
+                                             var x =document.forms["myform"]["dob"].value;
+                                               var d = "1960-01-01";
+                                                if(x < d)
+                                                {
+                                                 alert('Please enter year above 1960');
+	                                             document.getElementById("dob").focus();
+	                                             document.getElementById("dob").value="";
+	                                             return false;
+                                                   }
+                                                 var y =document.forms["myform"]["dob"].value;
+                                                  var s = "2000-01-01";
+                                                 if(y > s)
+                                                 {
+                                                 alert('Please enter year below 2000');
+	                                             document.getElementById("dob").focus();
+	                                              document.getElementById("dob").value="";
+	                                             return false;
+                                                   }
+                                                  return true;
+				                                       
+                                  	}
+
+                                  </script>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" class="form-control" id="uploadcertificate" name="uploadcertificate" placeholder="Upload Certificate Here">                             
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Username"onChange="return validateform7()">
+                                <script>
+                                	function validateform7()
+                                	{
+                                		if(myform.username.value == "")
+                                		 {
+                                        alert("Error: Username cannot be blank!");
+                                         myform.username.focus();
+                                          return false;
+                                             }
+    
+
+                                       if(myform.username.value.length < 6) {
+                                        alert("Error: username must contain at least six characters!");
+                                       myform.username.focus();
+                                       return false;
+                                          }
+                                	}
+                                </script>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="pass" name="pass"  placeholder="Password"
+                                onChange="return valiadteform8()">
+							<script>
+				                 function valiadteform8()
+				                     {
+					                 var x=document.forms["myform"]["pass"].value;
+                                     if(x=="")
+                                     {
+                                     alert("Please Fill  password");
+                                      document.getElementById("pass").focus();
+                                        return false;
+                                        }
+                                      else if(document.myform.pass.value.length<8)
+                                    {
+	                                 alert("Password should be minimum 8 characters long");
+	                                 document.getElementById("pass").focus();
+	                                 return false;
+                                    }
+                                    var passw=  /^[A-Za-z]\w{7,14}$/;
+                                     if(document.myform.pass.value.match(passw))
+                                       {
+	
+                                       }	
+                                      else
+                                         { 
+                                     alert('Password must contain numbers,characters,underscore and first letter as character');
+                                        document.getElementById("pass").focus();
+                                          return false;
+                                        }
+                                      return true;
+				                   }
+				                  </script>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="cpass" name="cpass" placeholder="Confirm Password" onChange="return valiadteform9()">
+
+                                	<script>
+				function validateform9()
+				{
+					var x=document.forms["myform"]["cpass"].value;
+if(x=="")
+{
+alert("Please Fill confirm password");
+ document.getElementById("cpass").focus();
+return false;
+}
+
+var pwd=document.getElementById("pass").value;
+var cpwd=document.getElementById("cpass").value;
+if(pwd!=cpwd){
+	     alert("Password not matching");
+		 document.getElementById("cpass").focus(); 
+         document.getElementById("cpass").value="";		 
+		 return false;
+}
+return true;
+				}
+				</script>
+                            </div>
+                             <div class="col-md-12 text-right">
+                            <button style="background-color: #f2f2f2;color:#000000;" type="submit" value="submit" name="submit" class="btn submit_btn">Submit</button>
+                             </div>
+                        </div>
+                        
+                        
+                       
+                    </form>
+                </div>
+	
+				
+              
+
+
+
+
+
+
+
+
+
+
+	
+
+	<!--================ start footer Area =================-->
+	
+</body>
+
+</html>
+
+
